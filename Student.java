@@ -23,7 +23,13 @@ public class Student{
        String name = input.nextLine();
 
        System.out.print("Hey " + name + ", how many courses did you take in the first semester: ");
-            int number = input.nextInt();  
+        while(!input.hasNextInt()){
+        System.out.println("Invalid input. Please enter a valid number of courses.");
+        input.next(); // Clear the invalid input
+        System.out.print("Hey " + name + ", how many courses did you take in the first semester: ");
+        }
+       
+        int number = input.nextInt();  
 
         CourseData[] courses = new CourseData[number];
 
